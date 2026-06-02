@@ -5,12 +5,12 @@ CREATE TABLE IF NOT EXISTS incidencias (
     descripcion TEXT NOT NULL,
     prioridad TEXT CHECK(prioridad IN ('Alta', 'Media', 'Baja')) NOT NULL,
     fecha_reporte TEXT NOT NULL,
-    estado TEXT DEFAULT 'Abierto',
+    estado_id TEXT DEFAULT 'Abierto',
     area TEXT NOT NULL
 );
 
 -- Inserción de 5 registros semilla
-INSERT OR IGNORE INTO incidencias (id, titulo, descripcion, prioridad, fecha_reporte, estado, area) VALUES
+INSERT OR IGNORE INTO incidencias (id, titulo, descripcion, prioridad, fecha_reporte, estado_id, area) VALUES
 (1, 'Fallo de conexión WiFi', 'El router no asigna IPs a los equipos.', 'Alta', '2026-05-20', 'Abierto', 'Soporte Redes'),
 (2, 'Monitor sin imagen', 'El monitor de la sala B no enciende.', 'Media', '2026-05-21', 'Abierto', 'Soporte Hardware'),
 (3, 'Teclado dañado', 'Faltan teclas en el equipo del módulo 4.', 'Baja', '2026-05-18', 'Resuelto', 'Soporte Hardware'),
